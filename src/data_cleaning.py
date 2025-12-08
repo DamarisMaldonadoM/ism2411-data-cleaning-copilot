@@ -22,11 +22,10 @@ def fix_column_names(df):
 #Removing leading and trailing spaces from string entries
 #prevents duplicates 
 #ensures consistency in data entries
-def clean_string_columns(df, ):
-    Column_Names =["prodname", "category"]
-    for col in Column_Names:
+def clean_string_columns(df, col_names):
+    for col in col_names:
         if col in df.columns:
-            df[col] = df[col].astype(str).str.strip() #removes leading and trailing spaces from string entries
+            df[col] = df[col].astype(str).str.strip()
     return df
 
 #Replacing missing data in price and quantity columns (filling with 0)
